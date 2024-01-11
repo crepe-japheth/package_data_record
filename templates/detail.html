@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block main_content %}
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Parcel List</h1>
+        <a href="{% url 'add' %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-download fa-sm text-white-50"></i> Update Item </a>
+
+        <a href="{% url 'add' %}" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i
+            class="fas fa-download fa-sm text-white-50"></i> Delete Item </a>
+    </div>
+
+<div class="card">
+    <h5 class="card-header">Featured</h5>
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    </div>
+  </div>
+</div>
+{% endblock main_content %}

@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+<div class="container-fluid">
+<form class="user" method="post">
+      {% csrf_token %}
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Send full name</label>
+            {{form.sender_name}}
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputAddress">Email addres</label>
+            {{form.sender_email}}
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Send Address</label>
+          {{form.sender_address}}
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2">Send Telephone number</label>
+          {{form.sender_phone_number}}
+        </div>
+        <hr>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Receiver full name</label>
+            {{form.recipient_name}}
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Receiver Email addres</label>
+            {{form.recipient_email}}
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Receiver Address</label>
+          {{form.recipient_address}}
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2">Receiver Telephone number</label>
+          {{form.recipient_phone_number}}
+        </div>
+        <hr>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">Package type</label>
+            {{form.package_type}}
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">Is exception</label>
+            {{form.is_exception}}
+              <!-- <option selected>Choose...</option>
+              <option>Exception</option>
+              <option>Regular</option>
+            </select> -->
+          </div>
+          
+          <div class="form-group col-md-2">
+            <label for="inputZip">Branch</label>
+            {{form.branch}}
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputState">Package Destination</label>
+            {{form.package_destination}}
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputCity">Package Weight (kg)</label>
+            {{form.package_weight}}
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputZip">Price</label>
+            <!-- <input type="text" class="form-control"  disabled=" disabled" id="inputZip" value="40000"> -->
+            {{form.tracking_number}}
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">ADD ITEM</button>  
+</form>
+<hr>
+<!-- <form action="" method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+  <button type="submit"> add to</button>
+</form> -->
+</div>
+{% endblock main_content %}

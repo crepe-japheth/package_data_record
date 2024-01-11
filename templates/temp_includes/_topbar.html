@@ -1,0 +1,41 @@
+<!-- Topbar -->
+{% load static %}
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+    {% if messages %}
+     {% for message in messages %}
+         <div class="text-center alert alert-{{ message.tags }}" role="alert">
+             {{ message|safe }}
+         </div>
+     {% endfor %}
+    {% endif %}
+
+    <!-- Sidebar Toggle (Topbar) -->
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+    </button>
+
+
+  
+
+    <!-- Topbar Navbar -->
+    <ul class="navbar-nav ml-auto">
+
+        <div class="topbar-divider d-none d-sm-block"></div>
+
+        <!-- Nav Item - User Information -->
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{request.user.username}}</span>
+                    {% if request.user.profile.profile_picture %}
+                    <img src="{{ request.user.profile.profile_picture.url }}" class="img-profile rounded-circle" alt="Profile Picture">
+                    {% else %}
+                    <img src="{% static 'img/profile.png' %}" class="img-profile rounded-circle" alt="Default Profile Picture">
+                    {% endif %}
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+<!-- End of Topbar -->
